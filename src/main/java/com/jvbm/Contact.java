@@ -11,5 +11,4 @@ public class Contact {
         this.name = name;
         this.email = email;
     }
-
 }

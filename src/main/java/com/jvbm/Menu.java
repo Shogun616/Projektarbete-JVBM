@@ -7,7 +7,7 @@ public class Menu {
 
     static boolean repeat = true;
     static Scanner scan = new Scanner(System.in);
-    private Contact contact;
+    //private Contact contact;
 
     public static void options(){
 
@@ -51,46 +51,47 @@ public class Menu {
                 repeat = false;
                 break;
             case 1:
-               // Context.addContact();
+                context.AddContact("Bewar","bewar@maronsi.com");
                 break;
             case 2:
-               // Context.viewContact();
+                Print();
                 break;
             case 3:
-               // Context.searchContact();
+               context.ConsoleSearch();
                 break;
             case 4:
-               // Context.deleteContact();
+               context.RemoveContact("Bewar");
                 break;
             default:
                 System.out.println("Invalid command! Please try again!");
         }
     }
 
-    private static Context context = new Context();
+    private static final Context context = new Context();
     private static int printCount = 0;
 
     public static void main(String[] args) {
-
-        Print();
+        while (repeat){
+            mainMenu();
+        }
+     /*   Print();
         context.AddContact("Bewar","bewar@maronsi.com");
         Print();
         context.RemoveContact("Bewar");
         Print();
         context.Search("Philip");
+        Print();
+        context.ConsoleSearch(); */
     }
 
     private static void Print()
     {
         printCount++;
-        List<Contact> list = context.getList();
+        List<Contact> list = Context.getList();
         System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒ Print " + printCount + " ▒▒▒▒▒▒▒▒▒▒▒▒");
         System.out.println("Name" + "\t\t" + "Email");
         System.out.println("-----------------------");
-        for (int i = 0; i < list.size(); i++)
-        {
-            Contact cc = list.get(i);
-
+        for (Contact cc : list) {
             System.out.println(cc.name + "\t\t" + cc.email);
         }
 
