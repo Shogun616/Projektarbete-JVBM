@@ -1,4 +1,4 @@
-package jvbm.com;
+package com.jvbm;
 
 import org.junit.jupiter.api.*;
 
