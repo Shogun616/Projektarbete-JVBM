@@ -3,6 +3,7 @@ package com.jvbm;
 import java.util.*;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Context {
 
@@ -84,5 +85,36 @@ public class Context {
             System.out.printf("No contacts found with '%1$s'%n", value);
         }
         System.out.println(" ");
+    }
+
+    public final ArrayList<Contact> ConsoleSearch() {
+
+        System.out.println(" ");
+
+        System.out.println("You have opened the console search method");
+
+        System.out.println(" ");
+
+        System.out.print("Enter your search String: ");
+        String value = new Scanner(System.in).nextLine();
+
+        ArrayList<Contact> result = (ArrayList<Contact>) contacts.stream().filter(x -> x.name.contains(value) || x.email.contains(value)).collect(Collectors.toList());
+
+        if (!result.isEmpty())
+        {
+            System.out.printf("Found %1$s results!%n", result.size());
+
+            for (Contact contact : result) {
+                System.out.printf("ID: %1$s, Name: %2$s, Email: %3$s%n", contact.id, contact.name, contact.email);
+            }
+            System.out.println(" ");
+            return result;
+        }
+        else
+        {
+            System.out.printf("No contacts found with '%1$s'%n", value);
+            System.out.println(" ");
+            return null;
+        }
     }
 }
