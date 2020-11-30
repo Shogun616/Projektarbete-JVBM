@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MenuTest {
+class ContextTest {
 
     @BeforeAll
     public static void init(){
@@ -26,18 +26,23 @@ class MenuTest {
         System.out.println("After Each cleanUpEach() method called");
     }
 
-    @DisplayName("Options Test")
+    @DisplayName("getList Test")
     @Test
-    void options() {
+    void getList() {
     }
 
-    @DisplayName("mainMenu Test")
+    @DisplayName("addContact Test")
     @Test
-    void mainMenu() {
+    void addContact() {
     }
 
-    @DisplayName("main Test")
+    @DisplayName("removeContact Test")
     @Test
-    void main() {
+    void removeContact() {
+    }
+
+    @DisplayName("consoleSearch Test")
+    @Test
+    void consoleSearch() {
     }
 }

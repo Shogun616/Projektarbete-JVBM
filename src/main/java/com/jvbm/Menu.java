@@ -28,18 +28,19 @@ public class Menu {
         String decision;
 
         boolean exit = false;
+        final boolean b = true;
 
         while (!exit){
 
             decision = scan.nextLine();
 
             if(decision.equalsIgnoreCase("N")){
-                exit = true;
+                exit = b;
                 mainMenu();
             }
 
             else if (decision.equalsIgnoreCase("Y")){
-                exit = true;
+                exit = b;
             }
         }
     }
