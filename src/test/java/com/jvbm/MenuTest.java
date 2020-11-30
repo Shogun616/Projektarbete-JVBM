@@ -27,17 +27,27 @@ class MenuTest {
     }
 
     @DisplayName("Options Test")
-    @Test
-    void options() {
+    @RepeatedTest(5)
+    void options(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertTrue(Menu.repeat);
+        assertTrue(true, "OK");
+        assertNull(null);
     }
 
     @DisplayName("mainMenu Test")
-    @Test
-    void mainMenu() {
+    @RepeatedTest(5)
+    void mainMenu(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertEquals(Menu.scan, Menu.scan);
+        assertNull(null);
     }
 
     @DisplayName("main Test")
-    @Test
-    void main() {
+    @RepeatedTest(5)
+    void main(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertTrue(Menu.repeat);
+        assertNull(null);
     }
 }

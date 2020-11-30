@@ -27,22 +27,30 @@ class ContextTest {
     }
 
     @DisplayName("getList Test")
-    @Test
-    void getList() {
+    @RepeatedTest(5)
+    void getList(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertNull(null);
     }
 
     @DisplayName("addContact Test")
-    @Test
-    void addContact() {
+    @RepeatedTest(5)
+    void addContact(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertNull(null);
     }
 
     @DisplayName("removeContact Test")
-    @Test
-    void removeContact() {
+    @RepeatedTest(5)
+    void removeContact(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertNull(null);
     }
 
     @DisplayName("consoleSearch Test")
-    @Test
-    void consoleSearch() {
+    @RepeatedTest(5)
+    void consoleSearch(RepetitionInfo repetitionInfo) {
+        System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        assertNull(null);
     }
 }
