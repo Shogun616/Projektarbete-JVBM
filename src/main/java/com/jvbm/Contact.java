@@ -1,7 +1,6 @@
 package com.jvbm;
 
 public class Contact {
-
    public String id;
    public String name;
    public String email;

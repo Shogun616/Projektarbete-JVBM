@@ -71,9 +71,7 @@ public class Context {
     public final void ConsoleSearch() {
 
         System.out.println(" ");
-
         System.out.println("You have opened the console search method");
-
         System.out.println(" ");
 
         System.out.print("Enter your search String: ");
