@@ -5,9 +5,23 @@ import java.util.Scanner;
 
 public class Menu {
 
+    private static final Context context = new Context();
+    private static int printCount = 0;
     static boolean repeat = true;
     static Scanner scan = new Scanner(System.in);
-    //private Contact contact;
+
+    private static void Print() {
+        printCount++;
+        List<Contact> list = Context.getList();
+        System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒ Contact list " + printCount + " ▒▒▒▒▒▒▒▒▒▒▒▒");
+        System.out.println("Name" + "\t\t" + "Email");
+        System.out.println("-----------------------");
+        for (Contact cc : list) {
+            System.out.println(cc.name + "\t\t" + cc.email);
+        }
+
+        System.out.println("-----------------------");
+    }
 
     public static void options(){
 
@@ -31,6 +45,7 @@ public class Menu {
     }
 
     public static void mainMenu(){
+
         System.out.println("======================");
         System.out.println("      Main Menu       ");
         System.out.println("======================");
@@ -51,7 +66,6 @@ public class Menu {
                 repeat = false;
                 break;
             case 1:
-                //context.AddContact("Bewar","bewar@maronsi.com");
                 context.AddContact();
                 break;
             case 2:
@@ -61,42 +75,18 @@ public class Menu {
                context.ConsoleSearch();
                 break;
             case 4:
-               context.RemoveContact("Bewar");
+               context.RemoveContact();
                 break;
             default:
                 System.out.println("Invalid command! Please try again!");
         }
     }
 
-    private static final Context context = new Context();
-    private static int printCount = 0;
-
     public static void main(String[] args) {
         while (repeat){
             mainMenu();
         }
-     /*   Print();
-        context.AddContact("Bewar","bewar@maronsi.com");
-        Print();
-        context.RemoveContact("Bewar");
-        Print();
-        context.Search("Philip");
-        Print();
-        context.ConsoleSearch(); */
     }
 
-    private static void Print()
-    {
-        printCount++;
-        List<Contact> list = Context.getList();
-        System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒ Print " + printCount + " ▒▒▒▒▒▒▒▒▒▒▒▒");
-        System.out.println("Name" + "\t\t" + "Email");
-        System.out.println("-----------------------");
-        for (Contact cc : list) {
-            System.out.println(cc.name + "\t\t" + cc.email);
-        }
 
-        System.out.println("-----------------------");
-
-    }
 }

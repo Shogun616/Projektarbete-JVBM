@@ -35,8 +35,10 @@ public class Context {
         System.out.println("Added new contact");
     }
 
-    public void RemoveContact(String name){
+    public void RemoveContact(){
 
+        System.out.print("Enter name: ");
+        String name = scan.nextLine();
         Contact contactToDelete = null;
 
         String decision;
