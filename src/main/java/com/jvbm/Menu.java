@@ -51,7 +51,8 @@ public class Menu {
                 repeat = false;
                 break;
             case 1:
-                context.AddContact("Bewar","bewar@maronsi.com");
+                //context.AddContact("Bewar","bewar@maronsi.com");
+                context.AddContact();
                 break;
             case 2:
                 Print();

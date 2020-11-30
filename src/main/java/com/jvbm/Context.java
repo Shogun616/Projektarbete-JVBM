@@ -22,13 +22,17 @@ public class Context {
         return contacts;
     }
 
-    public void AddContact(String name, String email){
-
-        System.out.println("Please enter name and email of the new user");
+    public void AddContact(){
+        System.out.println("Please add the new contact");
+        System.out.println();
         System.out.print("Name: ");
+        String name = scan.nextLine();
+
+        System.out.print("Email: ");
+        String email = scan.nextLine();
 
         contacts.add(new Contact(java.util.UUID.randomUUID().toString(), name, email));
-
+        System.out.println("Added new contact");
     }
 
     public void RemoveContact(String name){
@@ -62,32 +66,7 @@ public class Context {
         }
     }
 
-    public final void Search(String value) {
-        System.out.println(" ");
-
-        List<Contact> result = new ArrayList<>();
-        for (Contact x : contacts) {
-            if (x.name.contains(value) || x.email.contains(value)) {
-                result.add(x);
-            }
-        }
-
-        if (!result.isEmpty())
-        {
-            System.out.printf("Found %1$s results!%n", result.size());
-
-            for (Contact contact : result) {
-                System.out.printf("ID: %1$s, Name: %2$s, Email: %3$s%n", contact.id, contact.name, contact.email);
-            }
-        }
-        else
-        {
-            System.out.printf("No contacts found with '%1$s'%n", value);
-        }
-        System.out.println(" ");
-    }
-
-    public final ArrayList<Contact> ConsoleSearch() {
+    public final void ConsoleSearch() {
 
         System.out.println(" ");
 
@@ -100,21 +79,15 @@ public class Context {
 
         ArrayList<Contact> result = (ArrayList<Contact>) contacts.stream().filter(x -> x.name.contains(value) || x.email.contains(value)).collect(Collectors.toList());
 
-        if (!result.isEmpty())
-        {
+        if (!result.isEmpty()) {
             System.out.printf("Found %1$s results!%n", result.size());
 
             for (Contact contact : result) {
                 System.out.printf("ID: %1$s, Name: %2$s, Email: %3$s%n", contact.id, contact.name, contact.email);
             }
-            System.out.println(" ");
-            return result;
-        }
-        else
-        {
+        } else {
             System.out.printf("No contacts found with '%1$s'%n", value);
-            System.out.println(" ");
-            return null;
         }
+        System.out.println(" ");
     }
 }
