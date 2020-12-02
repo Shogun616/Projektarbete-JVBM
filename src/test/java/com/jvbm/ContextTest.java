@@ -30,6 +30,7 @@ class ContextTest {
     @RepeatedTest(5)
     void getList(RepetitionInfo repetitionInfo) {
         System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        //assertEquals();
         assertNull(null);
     }
 
@@ -37,6 +38,7 @@ class ContextTest {
     @RepeatedTest(5)
     void addContact(RepetitionInfo repetitionInfo) {
         System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        //assertEquals();
         assertNull(null);
     }
 
@@ -44,6 +46,7 @@ class ContextTest {
     @RepeatedTest(5)
     void removeContact(RepetitionInfo repetitionInfo) {
         System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        //assertEquals();
         assertNull(null);
     }
 
@@ -51,6 +54,7 @@ class ContextTest {
     @RepeatedTest(5)
     void consoleSearch(RepetitionInfo repetitionInfo) {
         System.out.println("Running test -> " + repetitionInfo.getCurrentRepetition());
+        //assertEquals();
         assertNull(null);
     }
 }
