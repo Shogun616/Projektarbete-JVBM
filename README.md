@@ -3,5 +3,5 @@ Projektarbete där man bygger en applikation med Java, Maven, Junit. Och använd
 Personer som är inblandad i projektet:
 Philip Mattsson,
 Samir Alsalhani,
-Giorgio Solinas,
+Giorgio Solinas och
 Biniam Haile Kifle
