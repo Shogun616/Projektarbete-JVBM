@@ -1,6 +1,7 @@
-package com.jvbm;
+package domain;
 
 public class Contact {
+
    public String id;
    public String name;
    public String email;
@@ -10,4 +11,5 @@ public class Contact {
         this.name = name;
         this.email = email;
     }
+
 }
